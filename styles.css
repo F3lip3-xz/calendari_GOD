@@ -7,18 +7,21 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
     overflow-x: hidden;
 }
 
 .calendario {
-    background-color: #fff;
+    background-color: #2d2d2d; /* Fondo oscuro para el calendario */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 800px;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); /* Sombra morada */
+    width: 70%;
+    max-width: 900px;
+    margin: 0 auto;
     animation: fadeIn 0.5s ease-in;
+    color: #e0e0e0; /* Texto claro */
 }
 
 .header {
@@ -29,7 +32,7 @@ body {
 }
 
 .header button, .vista-botones button, #agregar-categoria {
-    background-color: #4CAF50;
+    background-color: #6a0dad; /* Morado */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -40,14 +43,14 @@ body {
 }
 
 .header button:hover, .vista-botones button:hover, #agregar-categoria:hover {
-    background-color: #45a049;
+    background-color: #8a2be2; /* Morado más claro */
     transform: scale(1.05);
 }
 
 #mes-actual {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #e0e0e0; /* Texto claro */
 }
 
 .vista-botones {
@@ -55,12 +58,12 @@ body {
 }
 
 .dias-semana {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
+    color: #b19cd9; /* Morado claro */
 }
 
 .dias, .vista-semana {
@@ -71,7 +74,7 @@ body {
 }
 
 .dia {
-    background-color: #e0e0e0;
+    background-color: #3a3a3a; /* Gris oscuro */
     padding: 10px;
     text-align: center;
     cursor: pointer;
@@ -79,14 +82,16 @@ body {
     min-height: 50px;
     position: relative;
     transition: transform 0.2s, background-color 0.3s;
-    display: flex; /* Asegurar que el contenido se centre */
+    display: flex;
     align-items: center;
     justify-content: center;
+    color: #e0e0e0; /* Texto claro */
 }
 
 .dia.hoy {
-    background-color: #ffeb3b;
+    background-color: #4b0082; /* Morado oscuro */
     font-weight: bold;
+    color: #ffffff;
 }
 
 .dia.evento::after {
@@ -98,7 +103,7 @@ body {
 }
 
 .dia:hover {
-    background-color: #d0d0d0;
+    background-color: #5a5a5a; /* Gris más claro */
     transform: scale(1.02);
 }
 
@@ -114,7 +119,9 @@ body {
 .filtro-categoria select {
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #6a0dad; /* Borde morado */
+    background-color: #2d2d2d;
+    color: #e0e0e0;
 }
 
 .evento-form {
@@ -134,9 +141,11 @@ body {
     width: 100%;
     margin-bottom: 10px;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #6a0dad; /* Borde morado */
     border-radius: 5px;
     transition: border-color 0.3s;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
 }
 
 .categoria-input {
@@ -150,12 +159,12 @@ body {
 }
 
 .evento-form input:focus, .evento-form textarea:focus, .evento-form select:focus {
-    border-color: #2196F3;
+    border-color: #8a2be2; /* Morado más claro */
     outline: none;
 }
 
 .evento-form button {
-    background-color: #2196F3;
+    background-color: #6a0dad; /* Morado */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -165,7 +174,7 @@ body {
 }
 
 .evento-form button:hover {
-    background-color: #0b7dda;
+    background-color: #8a2be2; /* Morado más claro */
     transform: scale(1.05);
 }
 
@@ -174,19 +183,20 @@ body {
 }
 
 .evento-item {
-    background-color: #f9f9f9;
+    background-color: #3a3a3a; /* Gris oscuro */
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #6a0dad; /* Borde morado */
     margin-bottom: 5px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     animation: bounceIn 0.3s ease;
+    color: #e0e0e0;
 }
 
 .evento-item button {
-    background-color: #f44336;
+    background-color: #8b0000; /* Rojo oscuro */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -197,23 +207,23 @@ body {
 }
 
 .evento-item button.editar {
-    background-color: #ff9800;
+    background-color: #daa520; /* Dorado oscuro */
 }
 
 .evento-item button:hover {
-    background-color: #da190b;
+    background-color: #b22222; /* Rojo más claro */
     transform: scale(1.05);
 }
 
 .evento-item button.editar:hover {
-    background-color: #e68900;
+    background-color: #ffd700; /* Dorado más claro */
 }
 
 /* Estilos por categoría predefinida */
-.evento-item.Trabajo { border-left: 5px solid #2196F3; }
-.evento-item.Personal { border-left: 5px solid #4CAF50; }
-.evento-item.Estudio { border-left: 5px solid #ff9800; }
-.evento-item.Otro { border-left: 5px solid #9c27b0; }
+.evento-item.Trabajo { border-left: 5px solid #6a0dad; } /* Morado */
+.evento-item.Personal { border-left: 5px solid #8a2be2; } /* Morado claro */
+.evento-item.Estudio { border-left: 5px solid #4b0082; } /* Morado oscuro */
+.evento-item.Otro { border-left: 5px solid #9932cc; } /* Morado medio */
 
 /* Animaciones */
 @keyframes fadeIn {
@@ -233,7 +243,7 @@ body {
 }
 
 @keyframes highlight {
-    0% { background-color: #f0f0f0; }
-    50% { background-color: #e0e0e0; }
-    100% { background-color: #f9f9f9; }
+    0% { background-color: #2d2d2d; }
+    50% { background-color: #3a3a3a; }
+    100% { background-color: #2d2d2d; }
 }
