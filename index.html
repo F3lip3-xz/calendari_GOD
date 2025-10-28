@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Interactivo Avanzado</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css para animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <div class="calendario card shadow">
+            <div class="card-body">
+                <div class="header d-flex justify-content-between align-items-center mb-3">
+                    <button id="prev-mes" class="btn btn-outline-primary">&lt; Anterior</button>
+                    <span id="mes-actual" class="h4 mb-0 text-center flex-grow-1"></span>
+                    <button id="next-mes" class="btn btn-outline-primary">Siguiente &gt;</button>
+                </div>
+                <div class="vista-botones mb-3 text-center">
+                    <button id="vista-mes" class="btn btn-primary me-2">Vista Mes</button>
+                    <button id="vista-semana" class="btn btn-primary me-2">Vista Semana</button>
+                    <button id="vista-dia" class="btn btn-primary">Vista Día</button>
+                </div>
+                <div class="dias-semana d-flex justify-content-around mb-2" id="dias-semana">
+                    <div class="fw-bold">Lun</div>
+                    <div class="fw-bold">Mar</div>
+                    <div class="fw-bold">Mié</div>
+                    <div class="fw-bold">Jue</div>
+                    <div class="fw-bold">Vie</div>
+                    <div class="fw-bold">Sáb</div>
+                    <div class="fw-bold">Dom</div>
+                </div>
+                <div class="dias" id="dias"></div>
+                <div class="vista-semana" id="contenedor-vista-semana" style="display: none;"></div>
+                <div class="vista-dia" id="contenedor-vista-dia" style="display: none;"></div>
+                <div class="filtro-categoria mb-3">
+                    <label for="filtro-categoria" class="form-label">Filtrar por categoría:</label>
+                    <select id="filtro-categoria" class="form-select"></select>
+                </div>
+                <div class="evento-form mt-4" id="evento-form">
+                    <h3 id="evento-titulo" class="mb-3"></h3>
+                    <div class="mb-3">
+                        <input type="text" id="evento-nombre" class="form-control" placeholder="Nombre del evento">
+                    </div>
+                    <div class="mb-3">
+                        <input type="datetime-local" id="evento-fecha" class="form-control" placeholder="Fecha y hora">
+                    </div>
+                    <div class="categoria-input d-flex gap-2 align-items-center mb-3">
+                        <select id="evento-categoria" class="form-select"></select>
+                        <input type="text" id="nueva-categoria" class="form-control" placeholder="Nueva categoría">
+                        <button id="agregar-categoria" class="btn btn-success">Agregar</button>
+                    </div>
+                    <div class="mb-3">
+                        <textarea id="evento-desc" class="form-control" placeholder="Descripción"></textarea>
+                    </div>
+                    <button id="guardar-evento" class="btn btn-primary">Guardar Evento</button>
+                    <div class="evento-lista mt-3" id="evento-lista"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
